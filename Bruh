@@ -1,0 +1,94 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Lmao Hub | Blade Ball", HidePremium = false, SaveConfig = true, ConfigFolder = "Blade Ball"})
+OrionLib:MakeNotification({
+	Name = "Hello!",
+	Content = "Thank you for trying the script Lmao Hub!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+local Tab = Window:MakeTab({
+	Name = "⚔️ Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "⚔️ Main"
+})
+Tab:AddToggle({
+	Name = "Auto Parry",
+	Default = false,
+	Callback = function(Value)
+		getgenv().config = getgenv().config or {
+	hit_time = 0.5, -- // recommended 0.25 to 0.75 \\ --
+	
+	mode = 'Always', -- // Hold , Toggle , Always \\ --
+	deflect_type = 'Remote', -- // Key Press , Remote \\ --
+	notifications = true,
+	keybind = Enum.KeyCode.V
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+	end    
+})
+Tab:AddButton({
+	Name = "Hold Block To Spam",
+	Callback = function()
+      		game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Script by Hosvile",
+	Text = "Hold Block button to Spam",
+	Duration = 5
+})
+
+getgenv().SpamSpeed = 5 -- 1-25
+
+if not getgenv().exeSpam then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
+end
+
+getgenv().exeSpam = true
+  	end    
+})
+Tab:AddButton({
+	Name = "Fps Booster",
+	Callback = function()
+      		-- Made by RIP#6666
+_G.Settings = {
+    Players = {
+        ["Ignore Me"] = true, -- Ignore your Character
+        ["Ignore Others"] = true -- Ignore other Characters
+    },
+    Meshes = {
+        Destroy = false, -- Destroy Meshes
+        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
+    },
+    Images = {
+        Invisible = true, -- Invisible Images
+        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
+        Destroy = false, -- Destroy Images
+    },
+    Other = {
+        ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
+        ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
+        ["No Explosions"] = true, -- Makes Explosion's invisible
+        ["No Clothes"] = true, -- Removes Clothing from the game
+        ["Low Water Graphics"] = false, -- Removes Water Quality
+        ["No Shadows"] = false, -- Remove Shadows
+        ["Low Rendering"] = true, -- Lower Rendering
+        ["Low Quality Parts"] = true -- Lower quality parts
+    }
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Detect Spam",
+	Callback = function()
+      		https://raw.githubusercontent.com/DonGabrielle/AutoDetectV4/main/MainBalls
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Spam",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/sirapobsriumang/Auto-Spam-Parry/main/Bladeballnew"))()
+  	end    
+})
